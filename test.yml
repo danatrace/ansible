@@ -5,7 +5,7 @@
   
   - name: Check system information
     shell:
-    	"sleep 120"
+    	"sleep 120" 
     register: os_info
     
   - debug:

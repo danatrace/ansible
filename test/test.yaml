@@ -1,0 +1,11 @@
+- name: Shell module example
+  hsots: webservers
+  tasks:
+  
+  - name: Check system information
+    shell:
+    	"sleep 120" 
+    register: os_info
+    
+  - debug:
+    	msg: "{{os_info.stdout_lines}}"

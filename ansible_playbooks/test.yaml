@@ -1,6 +1,12 @@
-- name: Hello World Sample
-  hosts: all
+---
+- name: Shell module example
+  hsots: webservers
   tasks:
-    - name: Hello Message
-      debug:
-        msg: "Hello World!"
+  
+  - name: Check system information
+    shell:
+    	"sleep 200" 
+    register: os_info
+    
+  - debug:
+    	msg: "{{os_info.stdout_lines}}"

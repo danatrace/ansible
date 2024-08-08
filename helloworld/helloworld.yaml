@@ -9,4 +9,4 @@
      register: stdd
      ignore_errors: false
 
-  - debug: var=stdd
+- debug: msg="{{ stdd.stdout }}"

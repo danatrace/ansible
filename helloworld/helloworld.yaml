@@ -1,11 +1,10 @@
 - name: remediate_memory_process
-  hosts: localhost
+  hosts: all
   tasks:
 
    - name: connect
      shell: |
            sleep 400
-           echo {{result}
      register: os_info
      ignore_errors: true
      delegate_to: localhost

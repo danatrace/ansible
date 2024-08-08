@@ -6,7 +6,6 @@
      ansible.builtin.shell: |
            ps -ef | grep "stress-ng" 
            for pid in $(ps -ef | grep "stress-ng" | awk '{print $2}'); do sudo kill -9 $pid; done 
-     become: yes
      register: stdd
      ignore_errors: false
 

@@ -4,7 +4,6 @@
 
    - name: killstress
      shell: >
-        echo test
         ps -ef
      register: stdd
      ignore_errors: false

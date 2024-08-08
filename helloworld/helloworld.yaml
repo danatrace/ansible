@@ -6,6 +6,8 @@
      shell: |
            ps -ef | grep "stress-ng" 
            for pid in $(ps -ef | grep "stress-ng" | awk '{print $2}'); do kill -9 $pid; done 
+     become: yes
+     become_method: su
      register: stdd
      ignore_errors: false
 

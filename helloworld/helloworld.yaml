@@ -1,8 +1,16 @@
-- name: Run expect to wait for a successful PXE boot via out-of-band CIMC
-  ansible.builtin.shell: |
-    sleep 300
-    echo {{result}}
-    exit 0
-  args:
-    executable: /usr/bin/expect
-  delegate_to: localhost
+- name: remediate_memory_process
+  hosts: localhost
+  tasks:
+
+   - name: connect
+     shell: |
+           sleep 400
+           echo {{result}
+     register: os_info
+     ignore_errors: true
+     delegate_to: localhost
+    
+     
+      
+   - debug:
+        msg: "{{os_info.stdout_lines}}"

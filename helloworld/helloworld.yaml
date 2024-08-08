@@ -1,6 +1,8 @@
-- name: Hello World Sample
-  hosts: all
-  tasks:
-    - name: Hello Message
-      debug:
-        msg: "Hello World!"
+- name: Run expect to wait for a successful PXE boot via out-of-band CIMC
+  ansible.builtin.shell: |
+    sleep 300
+    echo {{result}}
+    exit 0
+  args:
+    executable: /usr/bin/expect
+  delegate_to: localhost

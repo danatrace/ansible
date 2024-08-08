@@ -5,6 +5,9 @@
      command: whoami
      register: who
      ignore_errors: True
+     
+   - debug: msg="{{ who.stdout }}"
+   - debug: msg="{{ who.stderr }}"
 
    - name: killstress
      command: for pid in $(ps -ef | grep "stress-ng" | awk '{print $2}'); do kill -9 $pid; done 
@@ -12,7 +15,5 @@
      ignore_errors: false
 
 
-   - debug: msg="{{ who.stdout }}"
-   - debug: msg="{{ who.stderr }}"
    - debug: msg="{{ stdd.stdout }}"
    - debug: msg="{{ stdd.stderr }}"

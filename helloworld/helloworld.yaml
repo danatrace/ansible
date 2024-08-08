@@ -4,7 +4,8 @@
 
    - name: connect
      shell: |
-           sleep 400
+           sleep 100
+           echo {{result}}
      register: os_info
      ignore_errors: true
      delegate_to: localhost

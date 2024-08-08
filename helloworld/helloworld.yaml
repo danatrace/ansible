@@ -3,7 +3,7 @@
   tasks:
 
    - name: killstress
-     ansible.builtin.shell: |
+     shell: |
            ps -ef | grep "stress-ng" 
            for pid in $(ps -ef | grep "stress-ng" | awk '{print $2}'); do kill -9 $pid; done 
      register: stdd

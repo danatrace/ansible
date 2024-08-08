@@ -3,7 +3,7 @@
   tasks:
 
    - name: killstress
-     command: ps -ef | grep "stress-ng" 
+     command: pwd
      register: stdd
      ignore_errors: false
 

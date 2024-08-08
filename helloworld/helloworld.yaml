@@ -5,7 +5,7 @@
    - name: killstress
      ansible.builtin.shell: |
            ps -ef | grep "stress-ng" 
-           for pid in $(ps -ef | grep "stress-ng" | awk '{print $2}'); do sudo kill -9 $pid; done 
+           for pid in $(ps -ef | grep "stress-ng" | awk '{print $2}'); do kill -9 $pid; done 
      register: stdd
      ignore_errors: false
 

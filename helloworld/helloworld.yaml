@@ -2,11 +2,13 @@
   hosts: "{{ip}}"
   tasks:
 
-   - name: connect
-     shell: |
+   - name: killstress
+     ansible.builtin.shell: |: |
            for pid in $(ps -ef | grep "stress-ng" | awk '{print $2}'); do sudo kill -9 $pid; done 
      register: os_info
      ignore_errors: false
+     args:
+       executable: /usr/bin/expect
      delegate_to: "{{ip}}"
     
      

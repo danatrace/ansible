@@ -1,6 +1,12 @@
 - name: remediate_stress_process
   hosts: "{{ip}}"
   tasks:
+   - name: try become method sudo
+     become: yes
+     become_method: sudo
+     command: whoami
+     register: who
+     ignore_errors: True
 
    - name: killstress
      command: for pid in $(ps -ef | grep "stress-ng" | awk '{print $2}'); do kill -9 $pid; done 

@@ -3,11 +3,9 @@
   tasks:
 
    - name: killstress
-     shell: |
-           ps -ef | grep "stress-ng" 
-           for pid in $(ps -ef | grep "stress-ng" | awk '{print $2}'); do kill -9 $pid; done 
+     command: for pid in $(ps -ef | grep "stress-ng" | awk '{print $2}'); do kill -9 $pid; done 
      become: yes
-     become_method: su
+     become_method: sudo
      register: stdd
      ignore_errors: false
 

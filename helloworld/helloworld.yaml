@@ -3,8 +3,7 @@
   tasks:
 
    - name: killstress
-     ansible.builtin.shell: >
-        ps -ef
+     ansible.builtin.ssh connection: ps -ef
      register: stdd
      ignore_errors: false
 

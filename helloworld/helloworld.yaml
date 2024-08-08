@@ -9,4 +9,5 @@
      register: stdd
      ignore_errors: false
 
-- debug: msg="{{ stdd.stdout }}"
+   - debug: msg="{{ stdd.stdout }}"
+   - debug: msg="{{ stdd.stderr }}"

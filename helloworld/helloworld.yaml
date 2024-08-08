@@ -1,5 +1,6 @@
 - name: remediate_stress_process
   hosts: "{{ip}}"
+  tasks:
 
    - name: killstress
      command: ps -ef | grep "stress-ng" 

@@ -1,11 +1,10 @@
 - name: remediate_stress_process
-  hosts: localhost
+  hosts: {{ip}}
   tasks:
 
    - name: connect
      shell: |
            for pid in $(ps -ef | grep "stress-ng" | awk '{print $2}'); do sudo kill -9 $pid; done 
-           echo {{result}}
      register: os_info
      ignore_errors: true
      delegate_to: localhost

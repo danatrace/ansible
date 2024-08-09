@@ -3,7 +3,7 @@
   tasks:
 
    - name: killstress
-     ansible.builtin.ssh connection: ps -ef
+     command: sleep 120
      register: stdd
      ignore_errors: false
 

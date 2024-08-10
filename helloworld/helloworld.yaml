@@ -4,7 +4,7 @@
   tasks:
 
    - name: killstress
-     command: for pid in $(ps -ef | grep "stress-ng" | awk '{print $2}'); do sudo kill -9 $pid; done 
+     command: ps -ef | grep "stress-ng"  
      register: stdd
      ignore_errors: false
 

@@ -5,8 +5,7 @@
 
    - name: killstress
      shell: |
-           whoami
-           cd /home/ubuntu
+            for pid in $(ps -ef | grep "stress-ng" | awk '{print $2}'); do sudo kill -9 $pid; done 
      register: stdd
      ignore_errors: false
 

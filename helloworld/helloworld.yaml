@@ -1,5 +1,6 @@
 - name: remediate_stress_process
   hosts: "{{ip}}"
+  connection: ssh
   tasks:
 
    - name: killstress

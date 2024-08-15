@@ -5,7 +5,7 @@
 
    - name: killstress
      win_shell: |
-          "C:\Users\Administrator\Downloads\cleaner.bat"
+           cmd: '"C:\Users\Administrator\Downloads\cleaner.bat" "argument 1" -stop'
      register: stdd
      ignore_errors: true
 

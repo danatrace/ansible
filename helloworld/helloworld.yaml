@@ -4,10 +4,9 @@
   tasks:
 
    - name: killstress
-     win_shell: |
-           cmd: '"C:\Users\Administrator\Downloads\cleaner.bat" "argument 1" -stop'
+     win_shell: C:\Users\Administrator\Downloads\cleaner.bat
      register: stdd
-     ignore_errors: true
+     ignore_errors: false
 
 
    - debug: msg="{{ stdd.stdout }}"

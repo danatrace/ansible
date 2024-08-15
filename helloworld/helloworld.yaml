@@ -5,8 +5,7 @@
 
    - name: killstress
      win_shell: |
-            echo "hello"
-            dir
+          "C:\Users\Administrator\Downloads\cleaner.bat"
      register: stdd
      ignore_errors: true
 

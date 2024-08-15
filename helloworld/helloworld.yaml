@@ -6,6 +6,7 @@
    - name: killstress
      win_shell: |
             echo "hello"
+            dir
      register: stdd
      ignore_errors: true
 

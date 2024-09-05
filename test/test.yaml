@@ -1,5 +1,5 @@
 - name: Shell module example
-  hsots: webservers
+  hosts: webservers
   tasks:
   
   - name: Check system information

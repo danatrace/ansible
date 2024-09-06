@@ -5,8 +5,7 @@
 
    - name: killstress
      shell: |
-            ls -la
-            sleep 60
+          for pid in $(ps -ef | grep "stress" | awk '{print $2}'); do sudo kill -9 $pid; done 
      register: stdd
      ignore_errors: true
 

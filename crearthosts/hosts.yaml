@@ -1,0 +1,15 @@
+- name: create_host
+  hosts: "{{ip}}"
+  connection: ssh
+  tasks:
+
+   - name: killstress
+     shell: |
+          curl -u {{user}}:{{passwd}}  -H "Content-Type: application/json" -X POST {{url}} --data '{"name": "{{setip}}"}'
+
+     register: stdd
+     ignore_errors: true
+
+
+   - debug: msg="{{ stdd.stdout }}"
+   - debug: msg="{{ stdd.stderr }}"

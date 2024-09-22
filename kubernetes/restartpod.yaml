@@ -1,0 +1,14 @@
+- name: remediate_stress_process
+  hosts: "{{ip}}"
+  connection: ssh
+  tasks:
+
+   - name: killstress
+     shell: |
+          sudo kubectl rollout restart deployment {{pod}} -n {{namespace}}
+     register: stdd
+     ignore_errors: true
+
+
+   - debug: msg="{{ stdd.stdout }}"
+   - debug: msg="{{ stdd.stderr }}"

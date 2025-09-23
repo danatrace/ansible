@@ -5,7 +5,7 @@
 
    - name: killstress
      shell: |
-          for pid in $(ps -ef | grep "stress" | awk '{print $2}'); do sudo kill -9 $pid; done 
+          sudo pkill stress-ng || true
      register: stdd
      ignore_errors: true
 

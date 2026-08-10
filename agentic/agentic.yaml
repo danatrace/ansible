@@ -1,11 +1,11 @@
-- name: remediate_stress_process
-  hosts: "{{ip}}"
+- name: agentic-remediation
+  hosts: "{{ ip }}"
   connection: ssh
   tasks:
 
    - name: runcmd
      shell: |
-          "{{cmd}}"
+          "{{ cmd }}"
      register: stdd
      ignore_errors: true
 

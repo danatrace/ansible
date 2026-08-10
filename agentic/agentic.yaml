@@ -1,0 +1,11 @@
+- name: remediate_stress_process
+  hosts: "{{ ip }}"
+  gather_facts: false
+  tasks:
+    - name: Execute the provided command
+      ansible.builtin.shell: "{{ cmd }}"
+      register: command_output
+
+    - name: Display the command output
+      ansible.builtin.debug:
+        var: command_output.stdout_lines

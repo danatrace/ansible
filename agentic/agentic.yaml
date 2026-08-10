@@ -1,11 +1,11 @@
 - name: agentic-remediation
-  hosts: "{{ ip }}"
+  hosts: "{{ip}}"
   connection: ssh
   tasks:
 
    - name: runcmd
      shell: |
-          "{{ cmd }}"
+          echo "hello world"
      register: stdd
      ignore_errors: true
 

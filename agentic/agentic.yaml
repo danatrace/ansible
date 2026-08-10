@@ -5,7 +5,7 @@
 
    - name: runcmd
      shell: |
-          echo "hello world"
+          echo hello world
      register: stdd
      ignore_errors: true
 

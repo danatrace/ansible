@@ -1,11 +1,14 @@
 - name: remediate_stress_process
-  hosts: "{{ ip }}"
-  gather_facts: false
+  hosts: "{{ip}}"
+  connection: ssh
   tasks:
-    - name: Execute the provided command
-      ansible.builtin.shell: "{{ cmd }}"
-      register: command_output
 
-    - name: Display the command output
-      ansible.builtin.debug:
-        var: command_output.stdout_lines
+   - name: killstress
+     shell: |
+          "{{ cmd }}"
+     register: stdd
+     ignore_errors: true
+
+
+   - debug: msg="{{ stdd.stdout }}"
+   - debug: msg="{{ stdd.stderr }}"

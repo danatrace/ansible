@@ -5,7 +5,7 @@
 
    - name: runcmd
      shell: |
-          "{{cmd}}"
+          {{cmd}}
      register: stdd
      ignore_errors: true
 
